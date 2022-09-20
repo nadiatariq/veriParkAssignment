@@ -1,0 +1,7 @@
+# Xcode
+#
+## User settings
+xcuserdata/
+.DS_Store
+# CocoaPods
+Pods/
