@@ -1,0 +1,35 @@
+Last login: Sat Sep 17 10:01:37 on console
+sameeltariq@sameeltariqs-MacBook-Air ~ % cd /Users/sameeltariq/Desktop/Nadia/VeriPark
+sameeltariq@sameeltariqs-MacBook-Air VeriPark % touch .gitignore
+sameeltariq@sameeltariqs-MacBook-Air VeriPark % nano .gitignore
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  GNU nano 2.0.6              File: .gitignore                        Modified  
+
+.DS_Store
+
+# CocoaPods
+Pods/
+
+
+
+
+^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Page ^K Cut Text  ^C Cur Pos
+^X Exit      ^J Justify   ^W Where Is  ^V Next Page ^U UnCut Text^T To Spell
