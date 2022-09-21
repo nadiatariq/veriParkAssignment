@@ -16,21 +16,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ukDoller" translatesAutoresizingMaskIntoConstraints="NO" id="X8N-Ig-QUD">
-                                <rect key="frame" x="0.0" y="0.0" width="860" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="Fed-fk-7XO">
-                                <rect key="frame" x="63" y="352.5" width="748" height="246"/>
+                                <rect key="frame" x="34" y="352.5" width="360" height="246"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Enter Service Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s9j-tQ-88X" customClass="ValidationsTextField" customModule="VeriPark" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="748" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="fm4-gk-Q7u"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="EZg-6w-LNF"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Enter Current Meter Reading" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zQ8-6p-WF7" customClass="ValidationsTextField" customModule="VeriPark" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="98" width="748" height="50"/>
+                                        <rect key="frame" x="0.0" y="98" width="360" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
@@ -38,10 +38,10 @@
                                         </connections>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="ja2-h6-Bls">
-                                        <rect key="frame" x="0.0" y="196" width="748" height="50"/>
+                                        <rect key="frame" x="0.0" y="196" width="360" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUv-EH-VgP">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.46000000000000002" blue="0.42747694780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="X4U-Tt-CqR"/>
@@ -57,7 +57,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeW-Id-i5e">
-                                                <rect key="frame" x="434" y="0.0" width="314" height="50"/>
+                                                <rect key="frame" x="240" y="0.0" width="120" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.46000000000000002" blue="0.42747694780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="tintColor" red="0.040242966259999999" green="0.041378952560000001" blue="0.097998894749999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -126,23 +126,30 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEM-IX-rk8">
-                                                    <rect key="frame" x="0.0" y="11" width="398" height="49.5"/>
+                                                    <rect key="frame" x="0.0" y="11" width="398" height="47.5"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="9cL-55-0Hc">
-                                                            <rect key="frame" x="0.0" y="14" width="398" height="21.5"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9cL-55-0Hc">
+                                                            <rect key="frame" x="0.0" y="14" width="398" height="19.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tA9-3O-QfP">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="193" height="21.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="127.5" height="19.5"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                     <color key="textColor" white="0.20153061224489796" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDP-4a-lhO">
-                                                                    <rect key="frame" x="205" y="0.0" width="193" height="21.5"/>
+                                                                    <rect key="frame" x="135.5" y="0.0" width="127" height="19.5"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                     <color key="textColor" white="0.20153061224489796" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ServiceNo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yy-7a-e1i">
+                                                                    <rect key="frame" x="270.5" y="0.0" width="127.5" height="19.5"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                    <color key="textColor" white="0.20153061219999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -170,6 +177,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="previous" destination="tA9-3O-QfP" id="gif-od-Sd8"/>
+                                            <outlet property="serviceNo" destination="6Yy-7a-e1i" id="1iq-C5-DCa"/>
                                             <outlet property="totalBillOfConsumption" destination="UDP-4a-lhO" id="ha3-At-OOg"/>
                                         </connections>
                                     </tableViewCell>
@@ -179,18 +187,24 @@
                                     <outlet property="delegate" destination="jiY-wP-p3y" id="2dN-DB-b1K"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="eYB-dN-1aL">
-                                <rect key="frame" x="24" y="113" width="366" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eYB-dN-1aL">
+                                <rect key="frame" x="8" y="113" width="398" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consumed Bill" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="lUC-9e-Ot1">
-                                        <rect key="frame" x="0.0" y="0.0" width="171" height="30"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consumed Bill" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="lUC-9e-Ot1">
+                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.46000000000000002" blue="0.42747694780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Consumption" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="gJO-22-vaa">
-                                        <rect key="frame" x="195" y="0.0" width="171" height="30"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Consumption" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="gJO-22-vaa">
+                                        <rect key="frame" x="136.5" y="0.0" width="125" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" red="0.0" green="0.46000000000000002" blue="0.42747694780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service Number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="rKM-6e-wDk">
+                                        <rect key="frame" x="273.5" y="0.0" width="124.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.46000000000000002" blue="0.42747694780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -222,11 +236,11 @@
                             <constraint firstAttribute="bottom" secondItem="il7-IO-cgI" secondAttribute="bottom" id="GIb-BY-lIR"/>
                             <constraint firstItem="9c1-XV-Ou1" firstAttribute="trailing" secondItem="il7-IO-cgI" secondAttribute="trailing" id="Grp-ar-mwP"/>
                             <constraint firstItem="a42-Q4-ism" firstAttribute="top" secondItem="eYB-dN-1aL" secondAttribute="bottom" constant="16" id="K83-uv-vog"/>
-                            <constraint firstItem="9c1-XV-Ou1" firstAttribute="trailing" secondItem="eYB-dN-1aL" secondAttribute="trailing" constant="24" id="Lx0-Jv-z14"/>
+                            <constraint firstItem="9c1-XV-Ou1" firstAttribute="trailing" secondItem="eYB-dN-1aL" secondAttribute="trailing" constant="8" id="Lx0-Jv-z14"/>
                             <constraint firstItem="il7-IO-cgI" firstAttribute="top" secondItem="d81-hp-ytX" secondAttribute="top" id="ReD-Ne-umB"/>
                             <constraint firstItem="9c1-XV-Ou1" firstAttribute="bottom" secondItem="PHE-6Z-vrY" secondAttribute="bottom" constant="344" id="SGH-iH-GvN"/>
                             <constraint firstItem="9c1-XV-Ou1" firstAttribute="trailing" secondItem="PHE-6Z-vrY" secondAttribute="trailing" constant="16" id="WZY-Pi-GP6"/>
-                            <constraint firstItem="eYB-dN-1aL" firstAttribute="leading" secondItem="9c1-XV-Ou1" secondAttribute="leading" constant="24" id="Yf0-lw-rDk"/>
+                            <constraint firstItem="eYB-dN-1aL" firstAttribute="leading" secondItem="9c1-XV-Ou1" secondAttribute="leading" constant="8" id="Yf0-lw-rDk"/>
                             <constraint firstItem="9c1-XV-Ou1" firstAttribute="trailing" secondItem="a42-Q4-ism" secondAttribute="trailing" constant="8" id="aHZ-id-5CP"/>
                             <constraint firstItem="a42-Q4-ism" firstAttribute="leading" secondItem="9c1-XV-Ou1" secondAttribute="leading" constant="8" id="gyt-9M-1LQ"/>
                             <constraint firstItem="PHE-6Z-vrY" firstAttribute="top" secondItem="a42-Q4-ism" secondAttribute="bottom" constant="22" id="nVz-9V-jdP"/>

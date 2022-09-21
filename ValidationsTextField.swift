@@ -18,7 +18,7 @@ class ValidationsTextField: UITextField {
 
         @IBInspectable var maxLength : Int = 0
         var valueType : ValueType = ValueType.alphaNumeric
-        
+    
         func verifyFields(shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
             
             switch valueType {

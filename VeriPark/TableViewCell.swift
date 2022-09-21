@@ -12,6 +12,7 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var totalBillOfConsumption: UILabel!
     
+    @IBOutlet weak var serviceNo: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

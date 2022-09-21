@@ -20,19 +20,11 @@ class ViewController: UIViewController , UITextFieldDelegate{
         //        fetchData()
         submitButton.layer.cornerRadius = 20
         nextButton.layer.cornerRadius = 20
-        
-        
-        self.serviceNoTF.maxLength  =  8
+      
         self.serviceNoTF.valueType = .alphaNumeric
         self.currentMeterReadingTF.valueType = .onlyNumbers
         print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
-//    func getDateOnly(fromTimeStamp timestamp: TimeInterval) -> String {
-//        let dateFormate = DateFormatter()
-//        dateFormate.timeZone = TimeZone.current
-//        dateFormate.dateFormat =  "MMMM dd, yyyy - h:mm:ss a z"
-//        return dateFormate.string(from: Date(timeIntervalSince1970: timestamp))
-//    }
     
     @IBAction func nextActionButton(_ sender: Any) {
         self.serviceNoTF.text = nil
@@ -46,6 +38,7 @@ class ViewController: UIViewController , UITextFieldDelegate{
         object.totalConsumption         = difference//Int(self.currentMeterReadingTF.text ?? "0") ?? 0
         object.totalBill = calculateTotalBill(units: difference)
         object.date = Date()
+       
         
         do {
             try realm.write({
@@ -62,10 +55,15 @@ class ViewController: UIViewController , UITextFieldDelegate{
             alert()
         }
         let object = CustomDataClass()
+//        let filtered = Array(realm.objects(CustomDataClass.self).filter({($0.serviceNumber ?? "").lowercased() == (self.serviceNoTF.text ?? "").lowercased() }))
+       // ============================//
+        let startOfDay = Calendar.current.startOfDay(for: Date())
+        let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay) ?? Date()
+        let predicate = NSPredicate(format: "date >= %@ && date < %@", startOfDay as NSDate, endOfDay as NSDate)
+        let todaysBill =  Array(realm.objects(CustomDataClass.self).filter(predicate).filter({ ($0.serviceNumber ?? "").lowercased() == (self.serviceNoTF.text ?? "").lowercased()}))
         
-        print()
-        let filtered = Array(realm.objects(CustomDataClass.self).filter({($0.serviceNumber ?? "").lowercased() == (self.serviceNoTF.text ?? "").lowercased() }))
-        if filtered.isEmpty {
+        // ============================//
+        if todaysBill.isEmpty {
             // Insert new object
             print("New service number")
             self.createObjectAndSave(difference:  Int(self.currentMeterReadingTF.text ?? "0") ?? 0)
@@ -75,16 +73,19 @@ class ViewController: UIViewController , UITextFieldDelegate{
         else{
             if let currentMeterReading = currentMeterReadingTF.text{
                 object.currentMeterReading = Int(currentMeterReading) ?? 0
-                print(currentMeterReading)
-                if Int(currentMeterReading) ?? 0  < filtered.last?.currentMeterReading ?? 0{
+                if Int(currentMeterReading) ?? 0  < todaysBill.last?.currentMeterReading ?? 0{
                     alertForObject()
                 }
                 else{
                     //get last object and calculate bill
                     print("Service number already exist")
-                    let lastObject = filtered.last
-                    let difference = (Int(self.currentMeterReadingTF.text ?? "0") ?? 0) - (lastObject?.currentMeterReading ?? 0)
-                    self.createObjectAndSave(difference: difference)
+//                    let lastObject = filtered.last
+//                    let difference = (Int(self.currentMeterReadingTF.text ?? "0") ?? 0) - (lastObject?.currentMeterReading ?? 0)
+//                    self.createObjectAndSave(difference: difference)
+                    let lastDifferenceObject = todaysBill.last
+                    let getLastDifference = (Int(self.currentMeterReadingTF.text ?? "0") ?? 0) - (lastDifferenceObject?.currentMeterReading ?? 0)
+                    self.createObjectAndSave(difference: getLastDifference)
+//
                 }
             }
         }
@@ -134,12 +135,19 @@ class ViewController: UIViewController , UITextFieldDelegate{
         return true
     }
     
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // Verify all the conditions
-        if let sdcTextField = textField as? ValidationsTextField {
-            return sdcTextField.verifyFields(shouldChangeCharactersIn: range, replacementString: string)
+            let maxLength = 10
+            let currentString: NSString = textField.text! as NSString
+            
+            let newString: NSString =
+                currentString.replacingCharacters(in: range, with: string) as NSString
+            return newString.length <= maxLength
         }
-        return true
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
+        if segue.identifier == "next" {
+            if let nextVC = segue.destination as? TableViewController{
+            
+            }
+        }
     }
 }

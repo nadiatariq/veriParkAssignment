@@ -10,6 +10,7 @@ import RealmSwift
 class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let realm = try!Realm()
     var getData = [CustomDataClass]()
+
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var saveButton: UIButton!
@@ -42,27 +43,30 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     func fetchData() {
-       getData =  Array(realm.objects(CustomDataClass.self))
-        print(getData)
+      
         getData = Array(realm.objects(CustomDataClass.self)).suffix(3)
-        
-    }
-  
+//        for item in realm.objects(CustomDataClass.self).filter({Bool($0.serviceNumber ?? "") ?? true }).suffix(3) {
+//           print(item)
+//        }
+
+   }
+   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//         return getData.suffix(from: getData.count-3)
         return getData.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         var fetchAndShow = CustomDataClass()
         fetchAndShow = getData[indexPath.row]
-        print(fetchAndShow)
+//        print(fetchAndShow)
             cell.previous.text = " \(fetchAndShow.currentMeterReading)"
+        cell.serviceNo.text = fetchAndShow.serviceNumber
             print("This is consumption result")
             let getCurrent = fetchAndShow.totalConsumption
             calculateTotalBill(units: getCurrent)
             cell.totalBillOfConsumption.text = " \(fetchAndShow.totalBill)"
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
